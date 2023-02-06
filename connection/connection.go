@@ -5,32 +5,17 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
-	"os"
 
-	"github.com/joho/godotenv"
+	"github.com/alexparco/FactGo/config"
+	_ "github.com/denisenkom/go-mssqldb"
 )
 
 type Server struct {
 	*sql.DB
 }
 
-func init() {
-	err := godotenv.Load("local-dev.env")
-	if err != nil {
-		log.Fatal(err)
-	}
-}
-
-var (
-	database = os.Getenv("DATABASE")
-	user     = os.Getenv("USER")
-	password = os.Getenv("PASSWORD")
-	port     = os.Getenv("PORT")
-	server   = os.Getenv("SERVER")
-)
-
-func NewConn() (*Server, error) {
-	query := fmt.Sprintf("server=%s;user id=%s;password=%s;port=%d;database=%s;", server, user, password, port, database)
+func NewConn(c *config.Conf) (*Server, error) {
+	query := fmt.Sprintf("server=%s;user id=%s;password=%s;port=%s;database=%s;", c.Server, c.User, c.Password, c.Port, c.Database)
 
 	db, err := sql.Open("sqlserver", query)
 	if err != nil {
