@@ -1,0 +1,77 @@
+package models
+
+// Modelo relacionado a las estructuras de las Facturas, Boletas, etc
+//
+
+type Documento struct {
+	Cia                        string
+	IdPlanta                   string
+	IdPlantaDireccion          string
+	IdTipoDoc                  string
+	Serie                      string
+	NroDocumento               string
+	SubTotal                   string
+	Fecha                      string
+	Hora                       string
+	IdMonedaDoc                string
+	NroDi                      string
+	DescripcionCliente         string
+	DepartamentoCliente        string
+	ProvinciaCliente           string
+	DistritoCliente            string
+	RazonSocialCliente         string
+	EmailCliente               string
+	FechaVence                 string
+	Igv                        string
+	PorcIgv                    string
+	Total                      string
+	MonedaDescripcion          string
+	IdTipoDocRef               string
+	SerieRef                   string
+	NroDocumentoRef            string
+	IdMotivoTipoSunat          string
+	DescripcionNota            string
+	MontoPer                   string
+	TotalMontoPer              string
+	RazonSocialTransporte      string
+	RucEmpTransporte           string
+	ChoferDescrip              string
+	IdChofer                   string
+	PlacaTractor               string
+	NroAutorizacion            string
+	DireccionOrigen            string
+	DepartOrigen               string
+	ProvinOrigen               string
+	DistriOrigen               string
+	UbigeoOrigen               string
+	PlantaOrigen               string
+	DireccionDestino           string
+	DistriDestino              string
+	ProvinDestino              string
+	DepartDestino              string
+	UbigeoDestino              string
+	CondicionPago              string
+	PlacaCisterna              string
+	NroCubicacion              string
+	MontoDescuento             string
+	FechaSistema               string
+	PorcPercepcion             string
+	IdCliente                  string
+	IdTipoDocCredito           string
+	NroPago                    string
+	TotalPeso                  string
+	FechaActual                string
+	CantidadItem               string
+	MotivoSunat                string
+	OrdenCompra                string
+	IdPlantaRef                string
+	IdCondicionPago            string
+	PorcNosRetiene             string
+	FlagEsAgenteRetenedor      string
+	MontoRetenedor             string
+	MontoPorcRetencion         string
+	IdClasificacionTipoNegocio string
+	FlagCondicionPagoCredito   string
+	MontoAplicaDebitoRef       string
+	PerCorrelativoCancelacion  string
+}
