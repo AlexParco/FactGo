@@ -8,11 +8,11 @@ import (
 )
 
 type Conf struct {
-	Database string
-	Server   string
-	Port     string
-	Password string
-	User     string
+	Database string `yaml:"database,omitempty"`
+	Server   string `yaml:"server,omitempty"`
+	Port     string `yaml:"port,omitempty"`
+	Password string `yaml:"password,omitempty"`
+	User     string `yaml:"user,omitempty"`
 }
 
 func ParseConf(path string) *Conf {
