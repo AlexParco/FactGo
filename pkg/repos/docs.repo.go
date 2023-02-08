@@ -24,7 +24,7 @@ func NewDocRepo(db *connection.Server) DocRepo {
 
 // findAllDocs implements DocRepo
 func (d *docRepo) FindAllDocs() ([]*models.Documento, error) {
-	rows, err := d.db.Query(cnst.SelectQueryDocs)
+	rows, err := d.db.Query(cnst.SELECTQUERYDOCS)
 	if err != nil {
 		return nil, err
 	}
@@ -60,7 +60,7 @@ func (d *docRepo) FindAllDocs() ([]*models.Documento, error) {
 func (d *docRepo) FindAllBajas() ([]*models.Baja, error) {
 	var bajas []*models.Baja
 
-	rows, err := d.db.Query(cnst.SelectQueryBajas)
+	rows, err := d.db.Query(cnst.SELECTQUERYBAJAS)
 
 	if err != nil {
 		return nil, err
